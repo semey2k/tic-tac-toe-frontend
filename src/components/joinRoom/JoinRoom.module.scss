@@ -1,0 +1,86 @@
+.root {
+  background: #000;
+}
+
+.input {
+  display: inline-block;
+  width: 280px;
+  padding: 15px 0 15px 15px;
+  font-family: 'Press Start 2P', cursive;
+  font-weight: 400;
+  background: #efefef;
+  border: 0;
+  border-radius: 3px;
+  outline: 0;
+  text-indent: 60px;
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 30px;
+  
+
+  &::-webkit-input-placeholder {
+    text-indent: 0;
+  }
+
+  + label {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 15px 5px;
+    color: rgb(243, 205, 255);
+    text-shadow: 0 1px 0 rgba(74, 19, 64, 0.333);
+    background: rgb(146, 106, 163);
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    transform-origin: 2px 2px;
+    transform: rotate(0);
+    // There should be a better way
+    animation: swing-back 0.4s 1 ease-in-out;
+  }
+}
+
+@keyframes swing {
+  0% {
+    transform: rotate(0);
+  }
+  20% {
+    transform: rotate(116deg);
+  }
+  40% {
+    transform: rotate(60deg);
+  }
+  60% {
+    transform: rotate(98deg);
+  }
+  80% {
+    transform: rotate(76deg);
+  }
+  100% {
+    transform: rotate(82deg);
+  }
+}
+@keyframes swing-back {
+  0% {
+    transform: rotate(82deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+.input:focus,
+.input:active {
+  color: rgb(146, 106, 163);
+  font-size: 18px;
+  text-indent: 0;
+  background: #fff;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+
+  &::-webkit-input-placeholder {
+    color: #aaa;
+  }
+  + label {
+    animation: swing 1.4s 1 ease-in-out;
+    transform: rotate(82deg);
+  }
+}
