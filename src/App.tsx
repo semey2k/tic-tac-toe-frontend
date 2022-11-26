@@ -35,7 +35,7 @@ function App() {
 
   const connectSocket = async () => {
     const socket = await socketService
-      .connect("http://localhost:9000")
+      .connect("https://tic-tac-toe-task7.herokuapp.com/")
       .catch((err) => {
         console.log("Error: ", err);
       });
